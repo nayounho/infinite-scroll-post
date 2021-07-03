@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { createPostTypeAction } from "../../redux/reducers/renderState";
 
-const Navigation = () => {
+const Navigation = ({ className }) => {
   const dispatch = useDispatch();
 
   const changePostType = type => {
@@ -9,7 +9,7 @@ const Navigation = () => {
   };
 
   return (
-    <ul>
+    <ul className={className}>
       <li>
         <button onClick={() => changePostType("a")}>A Posts</button>
       </li>

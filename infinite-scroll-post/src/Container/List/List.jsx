@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import api from "../../api/api";
-import ListItem from "../../Components/ListItem/ListItem";
 import { setAListAction, setBListAction } from "../../redux/reducers/renderList";
 import { createAPageAction, createBPageAction } from "../../redux/reducers/renderState";
 import { setSearchAListAction, setSearchBListAction } from "../../redux/reducers/renderList";
+import StyledListItem from "../../Components/ListItem/ListItem.styled";
 
-const List = () => {
+const List = ({ className }) => {
   const { aList, bList } = useSelector(state => state.renderList);
   const { postType, aPage, bPage } = useSelector(state => state.renderState);
   const searchWord = useSelector(state => state.searchWord);
@@ -46,13 +46,13 @@ const List = () => {
   }, [aPage, bPage, postType]);
 
   return (
-    <ul>
+    <ul className={className}>
       {postType === "a"
         ? aList.map(item => {
-            return <ListItem key={item.id} item={item} />;
+            return <StyledListItem key={item.id} item={item} />;
           })
         : bList.map(item => {
-            return <ListItem key={item.id} item={item} />;
+            return <StyledListItem key={item.id} item={item} />;
           })}
     </ul>
   );

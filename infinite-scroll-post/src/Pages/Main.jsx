@@ -1,15 +1,15 @@
-import Title from "../Components/Title/Title";
-import List from "../Container/List/List";
-import Search from "../Container/Search/Search";
-import Navigation from "../Container/Navigation/Navigation";
+import StyledTitle from "../Components/Title/Title.styled";
+import StyledSearch from "../Container/Search/Search.styled";
+import StyledNavigation from "../Container/Navigation/Navigation.styled";
+import StyledList from "../Container/List/List.styled";
 
 const Main = () => {
   return (
     <>
-      <Title>게시물을 검색해보세요</Title>
-      <Search />
-      <Navigation />
-      <List />
+      <StyledTitle>게시물을 검색해보세요</StyledTitle>
+      <StyledSearch />
+      <StyledNavigation />
+      <StyledList />
     </>
   );
 };

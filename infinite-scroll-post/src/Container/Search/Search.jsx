@@ -4,7 +4,7 @@ import debounce from "../../module/debounce";
 import { setSearchAListAction, setSearchBListAction } from "../../redux/reducers/renderList";
 import { createSetWordAction } from "../../redux/reducers/searchWord";
 
-const Search = () => {
+const Search = ({ className }) => {
   const { postType, aPage, bPage } = useSelector(state => state.renderState);
   const searchWord = useSelector(state => state.searchWord);
   const dispatch = useDispatch();
@@ -26,10 +26,10 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className={className}>
       <input type="text" id="searchInput" value={searchWord} onChange={onChange} />
       <label htmlFor="searchInput">검색어를 입력하세요</label>
-    </>
+    </div>
   );
 };
 
