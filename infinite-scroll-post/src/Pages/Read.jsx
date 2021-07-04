@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import api from "../api/api";
 
-const Read = () => {
+const Read = ({ className }) => {
   const { postType } = useSelector(state => state.renderState);
   const { id } = useParams();
   const postId = id.match(/[0-9]+/)[0];
@@ -27,11 +27,11 @@ const Read = () => {
   }, []);
 
   return (
-    <>
+    <div className={className}>
       <h1>{title}</h1>
       <p>{content}</p>
       <button onClick={goMain}>뒤로가기</button>
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createPostTypeAction } from "../../redux/reducers/renderState";
 
 const Navigation = ({ className }) => {

@@ -8,7 +8,7 @@ const ListItem = ({ item, className }) => {
 
   return (
     <li className={className}>
-      <Link to={`read/${postType + id}`} style={{ textDecoration: "none" }}>
+      <Link to={`read/${postType + id}`}>
         <Title key={id} level={2}>
           <strong>{id}</strong> {". " + title}
         </Title>
