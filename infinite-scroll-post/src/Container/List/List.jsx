@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import api from "../../api/api";
-import { setAListAction, setBListAction } from "../../redux/reducers/renderList";
 import { createAPageAction, createBPageAction } from "../../redux/reducers/renderState";
 import { setSearchAListAction, setSearchBListAction } from "../../redux/reducers/renderList";
 import StyledListItem from "../../Components/ListItem/ListItem.styled";
@@ -30,11 +29,15 @@ const List = ({ className }) => {
 
   useEffect(() => {
     const getList = async () => {
+      const newList = [];
       const page = postType === "a" ? aPage : bPage;
-      const res = await api.getList(postType, page);
-      const list = await res.json();
-      if (postType === "a") dispatch(setAListAction(list));
-      else dispatch(setBListAction(list));
+      for (let i = 0; i <= page; i++) {
+        const res = await api.getList(postType, i);
+        const list = await res.json();
+        newList.push(...list);
+      }
+      console.log(newList);
+      postType === "a" ? dispatch(setSearchAListAction(newList)) : dispatch(setSearchBListAction(newList));
     };
     const getSearch = async () => {
       const res = await api.getSearched(postType, searchWord);

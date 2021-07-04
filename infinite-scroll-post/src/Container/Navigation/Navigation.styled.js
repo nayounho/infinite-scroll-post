@@ -15,6 +15,7 @@ const StyledNavigation = styled(Navigation)`
     padding: 16px;
     border-radius: 5px;
   }
+
   & > li button:hover {
     background-color: rgba(229, 231, 235, 0.5);
   }

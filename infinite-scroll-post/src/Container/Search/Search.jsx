@@ -17,10 +17,14 @@ const Search = ({ className }) => {
         const list = await res.json();
         postType === "a" ? dispatch(setSearchAListAction(list)) : dispatch(setSearchBListAction(list));
       } else {
+        const newList = [];
         const page = postType === "a" ? aPage : bPage;
-        const res = await api.getList(postType, page);
-        const list = await res.json();
-        postType === "a" ? dispatch(setSearchAListAction(list)) : dispatch(setSearchBListAction(list));
+        for (let i = 0; i <= page; i++) {
+          const res = await api.getList(postType, i);
+          const list = await res.json();
+          newList.push(...list);
+        }
+        postType === "a" ? dispatch(setSearchAListAction(newList)) : dispatch(setSearchBListAction(newList));
       }
     })();
   };

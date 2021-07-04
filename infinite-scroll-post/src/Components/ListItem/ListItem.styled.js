@@ -7,6 +7,10 @@ const StyledListItem = styled(ListItem)`
   width: 860px;
   line-height: 20px;
   margin: 0 auto;
+
+  &:hover {
+    background-color: rgba(229, 231, 235, 0.5);
+  }
   & a {
     text-decoration: none;
   }
@@ -19,7 +23,6 @@ const StyledListItem = styled(ListItem)`
     margin: 0;
     font-size: 14px;
     color: #000;
-
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;

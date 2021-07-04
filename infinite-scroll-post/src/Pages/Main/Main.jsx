@@ -1,7 +1,7 @@
-import StyledTitle from "../Components/Title/Title.styled";
-import StyledSearch from "../Container/Search/Search.styled";
-import StyledNavigation from "../Container/Navigation/Navigation.styled";
-import StyledList from "../Container/List/List.styled";
+import StyledTitle from "../../Components/Title/Title.styled";
+import StyledSearch from "../../Container/Search/Search.styled";
+import StyledNavigation from "../../Container/Navigation/Navigation.styled";
+import StyledList from "../../Container/List/List.styled";
 import { useSelector } from "react-redux";
 
 const Main = () => {

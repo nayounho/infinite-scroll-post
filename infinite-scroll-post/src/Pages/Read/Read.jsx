@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import api from "../api/api";
+import api from "../../api/api";
+import Title from "../../Components/Title/Title";
 
 const Read = ({ className }) => {
   const { postType } = useSelector(state => state.renderState);
@@ -27,11 +28,15 @@ const Read = ({ className }) => {
   }, []);
 
   return (
-    <div className={className}>
-      <h1>{title}</h1>
-      <p>{content}</p>
-      <button onClick={goMain}>뒤로가기</button>
-    </div>
+    <section className={className}>
+      <main>
+        <Title level={1}>{title}</Title>
+        <p>{content}</p>
+      </main>
+      <footer>
+        <button onClick={goMain}>뒤로가기</button>
+      </footer>
+    </section>
   );
 };
 
