@@ -6,10 +6,11 @@ import { useSelector } from "react-redux";
 
 const Main = () => {
   const { postType } = useSelector(state => state.renderState);
+  const { searchWord } = useSelector(state => state.searchWord);
   return (
     <>
       <StyledTitle>게시물을 검색해보세요</StyledTitle>
-      <StyledSearch />
+      <StyledSearch searchWord={searchWord} />
       <StyledNavigation postType={postType} />
       <StyledList />
     </>

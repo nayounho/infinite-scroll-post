@@ -36,7 +36,6 @@ const List = ({ className }) => {
         const list = await res.json();
         newList.push(...list);
       }
-      console.log(newList);
       postType === "a" ? dispatch(setSearchAListAction(newList)) : dispatch(setSearchBListAction(newList));
     };
     const getSearch = async () => {

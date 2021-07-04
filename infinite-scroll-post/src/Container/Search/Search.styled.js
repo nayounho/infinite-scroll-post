@@ -20,11 +20,11 @@ const StyledSearch = styled(Search)`
   & > label::before {
     content: "";
     display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url("https://cdn.icon-icons.com/icons2/1744/PNG/512/3643762-find-glass-magnifying-search-zoom_113420.png");
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("https://i2.wp.com/www.thinkafrica.fi/wp-content/uploads/2019/04/search-icon.png?fit=1200%2C1200&ssl=1");
     background-size: cover;
-    background-position-y: 1px;
+    background-position-y: 4px;
     margin-right: 5px;
   }
   & > label {
@@ -32,7 +32,7 @@ const StyledSearch = styled(Search)`
     background-size: cover;
     overflow: hidden;
     position: absolute;
-    top: 17px;
+    top: 11px;
     left: 21px;
   }
 `;
